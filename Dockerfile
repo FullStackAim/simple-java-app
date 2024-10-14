@@ -1,4 +1,4 @@
-FROM maven:3.9.9-openjdk-17 AS build
+FROM maven:lastet AS build
 
 WORKDIR /app
 COPY pom.xml .
