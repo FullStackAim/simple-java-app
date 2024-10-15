@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/hello")
 public class App extends HttpServlet {
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String environment = System.getenv("ENVIRONMENT");
         response.setContentType("text/html");
