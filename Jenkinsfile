@@ -28,9 +28,11 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'main') {
                         echo 'Deploying to Production...'
+                        sh 'docker rm -f java-app-prod || true'
                         sh 'docker run -d -p 8082:8080 --name java-app-prod -e ENVIRONMENT=production simple-java-app:prod'
                     } else {
                         echo 'Deploying to Development...'
+                        sh 'docker rm -f java-app-dev || true'
                         sh 'docker run -d -p 8081:8080 --name java-app-dev -e ENVIRONMENT=development simple-java-app:dev'
                     }
                 }
