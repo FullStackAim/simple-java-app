@@ -8,7 +8,7 @@ def pipelineParameters = [
 
 pipeline {
     agent any
-    properties([
+    options([
         parameters(pipelineParameters)
     ])
     
