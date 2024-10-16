@@ -13,13 +13,11 @@ pipeline {
             name: "after", 
             defaultValue: "", 
             description: "Log created after, ex: 2024-09-07, default is 10 days ago from today",
-            trim: true
         )
         string(
             name: "before", 
             defaultValue: "", 
             description: "Log created before, ex: 2024-09-07, default is today",
-            trim: true
         )
     }
     
