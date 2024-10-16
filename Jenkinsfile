@@ -8,9 +8,20 @@ def pipelineParameters = [
 
 pipeline {
     agent any
-    parameters([
-        string(name: "after", defaultValue: "", description: "log created after, ex: 2024-09-07, default today minus 10 days", trim: true),
-        string(name: "before", defaultValue: "", description: "log created before, ex: 2024-09-07, default is today", trim: true)    ])
+    parameters {
+        string(
+            name: "after", 
+            defaultValue: "", 
+            description: "Log created after, ex: 2024-09-07, default is 10 days ago from today",
+            trim: true
+        )
+        string(
+            name: "before", 
+            defaultValue: "", 
+            description: "Log created before, ex: 2024-09-07, default is today",
+            trim: true
+        )
+    }
     
     stages {
         stage('Build') {
