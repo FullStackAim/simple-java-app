@@ -1,6 +1,15 @@
+def available_environments = ["dev", "rec", "preprod", "production"]
+def now = new Date()
+def pipelineParameters = [
+            string(name: "after", defaultValue: "", description: "log created after, ex: 2024-09-07, default today minus 10 days", trim: true ),
+            string(name: "before", defaultValue: "", description: "log created beforte, ex: 2024-09-07, default is today", trim: true ),
+        ]
+
 pipeline {
     agent any
-
+    properties([
+        parameters(pipelineParameters)
+])
     stages {
         stage('Build') {
             steps {
