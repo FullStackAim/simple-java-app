@@ -16,7 +16,7 @@ public class App extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
         out.println("<h1>THIS IS THE DEV ENVIRONEMENT</h1>");
-        out.println("<p>Running in vvvvvvvv " + environment + " environment.</p>");
+        out.println("<p>testing " + environment + " environment.</p>");
         out.println("</body></html>");
     }
 }
